@@ -187,3 +187,213 @@ for itr in range(1,num+1):
     if str(itr)==l[-1]:
         break
 print(json.dumps(ans))
+
+print("Meena")
+
+
+from collections import Counter
+from heapq import nlargest
+n=int(input())
+ans=[]
+for i in range(n):
+    s=input().split(' ')
+    for j in range(len(s)):
+        if s[j].startswith('#'):
+            ans.append(s[j])
+res=Counter(ans)
+result=dict(res)
+print(str(res.most_common()))
+'''z=nlargest(5,result, key=result.get)
+for k in z:
+    print(k)''
+-------------------------------------------------------------------------
+							STACK :
+class perform:
+    def __init__(self,stack):
+        self.stack=stack
+    def push(self):
+        add=int(input('Enter value to be pushed : '))
+        self.stack.append(add)
+    def pop(self):
+        print('The popped element is :',self.stack.pop())
+stack=[]
+while True:
+    num=int(input('Enter your choice : '))
+    ans=perform(stack)
+    if num==1:
+        ans.push()
+    elif num==2:
+        ans.pop()
+    elif num==3:
+        stack.sort(reverse=True)
+        print('stack elements are :',stack)
+    elif num==4:
+        print('Exit')
+        break
+    else:
+        print('Invalid Choice')
+--------------------------------------------------------------
+							CLASS AND OBJECTS :
+class studentDetails:
+    name = input('Enter name : ')
+    regno = input('Enter regno : ')
+    branch = input('Enter branch : ')
+    sem = input('Enter sem : ')
+    def display(self):
+        print('Name :',self.name)
+        print('Regno :',self.regno)
+        print('Branch :',self.branch)
+        print('Sem :',self.sem)
+result=studentDetails()
+result.display()
+-----------------------------------------------------------------------------------------
+class date:
+    year = input('Enter year : ')
+    month = input('Enter month : ')
+    date = input('Enter date : ')
+    def display(self):
+        print('Today\'s Date in dd/mm/yyyy format :',self.date+'/'+self.month+'/'+self.year)
+result=date()
+result.display()
+-------------------------------------------------------------------------------------------
+class largestNumber:
+    n1,n2 = input('Enter 2 numbers : ').split()
+    def display(self):
+        if self.n1>self.n2:
+            print('Biggest number is',self.n1)
+        else:
+            print('Biggest number is',self.n2)
+result=largestNumber()
+result.display()
+-------------------------------------------------------------------------------
+							CONSTRUCTOR AND DESTRUCTOR :
+class studentDetails:
+    def __init__(self,name,rollno,address,zipcode):
+        print('The entered student details are shown below ::-----------')
+        self.name=name
+        self.rollno=rollno
+        self.address=address
+        self.zipcode=zipcode
+    def display(self):
+        print('Student Name ::',self.name)
+        print('Roll no is ::',self.rollno)
+        print('Address is ::',self.address)
+        print('Zipcode is ::',self.zipcode)
+        print('Student Detail is Closed...............')
+print('This is student details constructor called..............')
+name=input('Enter the student name :: ')
+rollno=input('Enter the student roll no :: ')
+address=input('Enter the student address :: ')
+zipcode=input('Enter the zipcode :: ')
+s=studentDetails(name,rollno,address,zipcode)
+s.display()
+--------------------------------------------------------------------------------------------
+								QUEUE :
+class perform:
+    def __init__(self,queue):
+        self.queue=queue
+    def insert(self):
+        c=0
+        add=int(input('Insert the element in queue : '))
+        self.queue.insert(c,add)
+        c+=1
+    def delete(self):
+        print('Element deleted from queue is :',self.queue.pop())
+queue=[]
+while True:
+    num=int(input('Enter your choice : '))
+    ans=perform(queue)
+    if num==1:
+        ans.insert()
+    elif num==2:
+        ans.delete()
+    elif num==3:
+        queue.sort()
+        print('Queue elements are :',queue)
+    elif num==4:
+        print('Exit')
+        break
+    else:
+        print('Invalid Choice')
+------------------------------------------------------------------------------------------------
+							SINGLE INHERITANCE :
+class base:
+    a, b = map(int, input("Enter two numbers : ").split())
+class derived(base):
+    def mul(self):
+        print("a :",self.a)
+        print("b :",self.b)
+        print("c :",self.a*self.b)
+object=derived()
+object.mul()
+-------------------------------------------------------------------------------------------------------
+							MULTIPLE INHERITANCE :
+class base1:
+    m=int(input())
+class base2:
+    n=int(input())
+class derived(base1,base2):
+    def mul(self):
+        print("m :",self.m)
+        print("n :",self.n)
+        print("m*n :",self.m*self.n)
+object=derived()
+object.mul()
+------------------------------------------------------------------------------------------------------------
+							MULTILEVEL INHERITANCE :
+class base:
+    a,b=map(int,input().split(' '))
+    def add(self):
+        print("a+b =",self.a+self.b)
+class derived1(base):
+    c=int(input())
+    def sub(self):
+        print("sub =",(self.a+self.b)-self.c)
+class derived2(derived1):
+    def total(self):
+        print("Arithmetic")
+d=derived2()
+d.total()
+d.sub()
+d.add()
+------------------------------------------------------------------------------------------------------------------------
+							HIERARCHICAL INHERITANCE :
+class base:
+    def add(self):
+        print("This is add")
+class derived1(base):
+    def sub(self):
+        print("This is sub")
+class derived2(base):
+    def total(self):
+        print("Arithmetic")
+d1=derived1()
+d2=derived2()
+d1.add()
+d1.sub()
+d2.add()
+d2.total()
+-----------------------------------------------------------------------------------------------------------------------------------
+							HYBRID INHERITANCE :
+class base1:
+    roll=int(input())
+    def add(self):
+        print("Roll no ::",self.roll)
+        print("Marks obtained :")
+class base2(base1):
+    part1=float(input())
+    part2,sports=map(int,input().split(' '))
+    def sub(self):
+        print("Part1 =",self.part1)
+        print("Part2 =",self.part2)
+        print("Sports =",self.sports)
+class derived(base2):
+    def total(self):
+        print("Total score =",self.part1+self.part2+self.sports)
+d1=derived()
+d1.add()
+d1.sub()
+d1.total()
+-----------------------------------------------------------------------------------------------------------------------------------
+							LINKED LIST :
+
